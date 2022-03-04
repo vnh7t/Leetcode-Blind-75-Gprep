@@ -10,27 +10,22 @@ Trie (we pronounce "try") or prefix tree is a tree data structure, which is used
 1. Autocomplete
 Google Suggest
 
-Figure 1. Google Suggest in action.
 
 2. Spell checker
 Spell Checker
 
-Figure 2. A spell checker used in word processor.
 
 3. IP routing (Longest prefix matching)
 IP Routing
 
-Figure 3. Longest prefix matching algorithm uses Tries in Internet Protocol (IP) routing to select an entry from a forwarding table.
 
 4. T9 predictive text
 T9 Predictive Text
 
-Figure 4. T9 which stands for Text on 9 keys, was used on phones to input texts during the late 1990s.
 
 5. Solving word games
 Boggle
 
-Figure 5. Tries is used to solve Boggle efficiently by pruning the search space.
 
 There are several other data structures, like balanced trees and hash tables, which give us the possibility to search for a word in a dataset of strings. Then why do we need trie? Although hash table has O(1)O(1) time complexity for looking for a key, it is not efficient in the following operations :
 
@@ -45,11 +40,6 @@ Maximum of RR links to its children, where each link corresponds to one of RR ch
 Boolean field which specifies whether the node corresponds to the end of the key, or is just a key prefix.
 Representation of a key in trie
 
-Figure 6. Representation of a key "leet" in trie.
-
-Java
-
-
 Two of the most common operations in a trie are insertion of a key and search for a key.
 
 Insertion of a key to a trie
@@ -58,10 +48,6 @@ We insert a key by searching into the trie. We start from the root and search a 
 A link exists. Then we move down the tree following the link to the next child level. The algorithm continues with searching for the next key character.
 A link does not exist. Then we create a new node and link it with the parent's link matching the current key character. We repeat this step until we encounter the last character of the key, then we mark the current node as an end node and the algorithm finishes.
 Insertion of keys into a trie
-
-Figure 7. Insertion of keys into a trie.
-
-
 
 Time complexity : O(m)O(m), where m is the key length.
 In each iteration of the algorithm, we either examine or create a node in the trie till we reach the end of the key. This takes only mm operations.
@@ -82,7 +68,6 @@ Search of a key in a trie
 
 Figure 8. Search for a key in a trie.
 
-
 Search for a key prefix in a trie
 The approach is very similar to the one we used for searching a key in a trie. We traverse the trie from the root, till there are no characters left in key prefix or it is impossible to continue the path in the trie with the current key character. The only difference with the mentioned above search for a key algorithm is that when we come to an end of the key prefix, we always return true. We don't need to consider the isEnd mark of the current trie node, because we are searching for a prefix of a key, not for a whole key.
 
@@ -90,12 +75,6 @@ Search of a key prefix in a trie
 
 Figure 9. Search for a key prefix in a trie.
 
-
-Complexity Analysis
-
-Time complexity : O(m)O(m)
-
-Space complexity : O(1)O(1)
 
 Practice Problems
 Here are some wonderful problems for you to practice which uses the Trie data structure.
